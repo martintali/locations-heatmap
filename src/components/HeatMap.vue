@@ -64,14 +64,14 @@ export default {
     return this.$gmapApiPromiseLazy().then(() => {
       // eslint-disable-next-line
       let center = {lat: -34.593272, lng: -58.528348};
-      
+
       if (this.lat && this.lng) {
         center = new google.maps.LatLng(this.lat, this.lng);
       }
 
       this.$mapObject = new google.maps.Map(this.$refs.heatmap, {
         zoom: this.initialZoom,
-        center: center,
+        center,
         mapTypeId: this.mapType,
       });
 
